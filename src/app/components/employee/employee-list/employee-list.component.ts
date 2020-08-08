@@ -20,7 +20,7 @@ export class EmployeeListComponent implements OnInit {
   limit : number = 10;   
   currentPage : number = 1;
   pages : Array<number> = [];
-
+  last = '-';
   title = "Listado de empleados";
   constructor(private employeeService: EmployeeService) { }
 
@@ -32,6 +32,7 @@ export class EmployeeListComponent implements OnInit {
   init() : void{
     this.pages = [];    
     this.currentPage = 1;    
+    this.last = '-'; 
   }
   count(): void {
     this.employeeService.count().subscribe(
@@ -48,8 +49,10 @@ export class EmployeeListComponent implements OnInit {
     this.numberPages = Math.floor(this.numberDocs / this.limit);
     this.numberPages++;            
     for (let index = 1; index <= this.numberPages; index++) {            
+      
       this.pages.push(index);
-    }    
+    }
+    console.warn(this.pages);    
     this.loadPage(this.currentPage);
   }
   changeLimit($event){

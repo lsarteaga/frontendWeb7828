@@ -1,9 +1,58 @@
 import { Injectable } from '@angular/core';
-
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { retry } from 'rxjs/operators';
+import { Project} from '../../../shared/models/project/project'
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  constructor() { }
+  url: string = 'https://proyecto-javascript-8ecde.web.app/api/projects';
+  httpOptions={
+    headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    })
+  };
+
+  constructor(private http: HttpClient) { }
+
+  save(project: Project): Observable<any>  {
+    let projectBody = JSON.stringify(project);
+    if(project.idproject === undefined){
+      return this.http.post<Project>(this.url, projectBody, this.httpOptions);
+    }
+    else{
+      return this.http.put<Project>(this.url.concat('/').concat(project.idemployee), projectBody, this.httpOptions);
+    }
+  }
+
+  retrieve(id: string): Observable<Project>  {
+    return this.http.get<Project>(this.url.concat('/').concat(id), this.httpOptions)
+      .pipe(
+        retry(1)
+      );
+  }
+
+
+  count(): Observable<any>  {
+    return this.http.get<any>('https://proyecto-javascript-8ecde.web.app/api/count/projects', this.httpOptions)
+      .pipe(
+        retry(1)
+      );
+  }
+
+  delete(id: string): Observable<any>  {
+    return this.http.delete<Project>(this.url.concat('/').concat(id), this.httpOptions);
+  }
+
+  list(page: number, limit : number): Observable<Project[]> {
+    return this.http.get<Project[]>(this.url + '/' + page + '/' + limit, this.httpOptions)
+      .pipe(
+        retry(1)
+      );
+  }
+
+
 }
