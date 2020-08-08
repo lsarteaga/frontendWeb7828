@@ -1,1 +1,56 @@
-<p>client-card works!</p>
+<div class="container">
+  <div>
+    <h2><strong>Cartilla de {{ client.name }}</strong></h2>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon><strong> Nombre:</strong>
+          <div class="media-body">
+            <h5>{{ client.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon><strong> Cédula:</strong>
+          <div class="media-body">
+            <h5>{{ client.cardId }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon><strong> Teléfono:</strong>
+          <div class="media-body">
+            <h5>{{ client.phone }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon><strong> Dirección:</strong>
+          <div class="media-body">
+            <h5>{{ client.direction }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <a href="#" class="btn btn-success" routerLink="/client/list">Listado de Clientes</a>
+    </div>
+  </div>
+</div>

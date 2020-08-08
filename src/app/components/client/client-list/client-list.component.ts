@@ -20,13 +20,14 @@ export class ClientListComponent implements OnInit {
   limit: number = 10;
   currentPage: number = 1;
   pages: Array<number> = [];
-
+  title: string;
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
     this.count();
   }
   init(): void {
+    this.title = 'Listado de clientes';
     this.pages = [];
     this.currentPage = 1;
   }

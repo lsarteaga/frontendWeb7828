@@ -1,1 +1,27 @@
-<h1>si valio el componenete</h1>
+<div class="container">
+  <strong>{{ title|titlecase }}</strong><br>
+  <table  class="table">
+    <thead>
+    <td>No. </td>
+    <td>Nombre</td>
+    <td>Teléfono</td>
+    <td>Dirección</td>
+    <td>Cédula</td>
+
+    <td></td>
+    </thead>
+    <tr *ngFor="let item of clients; let i = index">
+      <td>{{ i+1 }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.direction }}</td>
+      <td>{{ item.cardId }}</td>
+
+      <td>
+        <button mat-button class="btn btn-sm btn-info" [routerLink]="['/client/card', item.idclient]"><fa-icon [icon]='faEye'></fa-icon>&nbsp;</button>
+        <button mat-button class="btn btn-sm btn-warning" [routerLink]="['/client/form', item.idclient]"><fa-icon [icon]='faPencilAlt'></fa-icon>&nbsp;</button>
+        <button mat-button class="btn btn-sm btn-danger" (click)="delete(item)"><fa-icon [icon]='faTrash'></fa-icon>&nbsp;</button>
+      </td>
+    </tr>
+  </table>
+</div>

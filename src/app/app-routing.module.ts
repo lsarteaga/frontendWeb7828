@@ -15,21 +15,17 @@ const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: 'employee/card/:id', component: EmployeeCardComponent},
   {path: 'employee/form/:id', component: EmployeeFormComponent},
+
   {path: 'employee/form', component: EmployeeFormComponent},
   {path: 'employee/list', component: EmployeeListComponent},
-
-
   {path: 'client/list', component: ClientListComponent},
   {path: 'client/form', component: ClientFormComponent},
   {path: 'client/form/:id', component: ClientFormComponent},
   {path: 'client/card/:id', component: ClientCardComponent},
-
-  {path: 'project/card/:id', component: ProjectCardComponent},
-  {path: 'project/form', component: ProjectFormComponent},
-  {path: 'project/form/:id', component: ProjectFormComponent},
-
   {path: 'project/list', component: ProjectListComponent},
-  
+  {path: 'project/form', component: ProjectFormComponent},
+  {path: 'project/card/:id', component: ProjectCardComponent},
+  {path: 'project/form/:id', component: ProjectFormComponent}
 ];
 
 @NgModule({
