@@ -12,10 +12,11 @@ import {ProjectListComponent} from './components/project/project-list/project-li
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: 'employee/:id', component: EmployeeCardComponent},
   {path: 'employee/form', component: EmployeeFormComponent},
   {path: 'employee/form/:id', component: EmployeeFormComponent},
-  {path: 'employee/list', component: EmployeeListComponent},
+  {path: 'list/employee', component: EmployeeListComponent},
   {path: 'client/:id', component: ClientCardComponent},
   {path: 'client/form', component: ClientFormComponent},
   {path: 'client/form/:id', component: ClientFormComponent},

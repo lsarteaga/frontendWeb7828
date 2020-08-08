@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
@@ -13,6 +17,10 @@ import { ProjectFormComponent } from './components/project/project-form/project-
 import { ProjectListComponent } from './components/project/project-list/project-list.component';
 import { ProjectCardComponent } from './components/project/project-card/project-card.component';
 import { MasmasPipe } from './shared/pipes/masmas.pipe';
+import { EmployeeService } from './core/services/employee/employee.service';
+import { ClientService } from './core/services/client/client.service';
+import { ProjectService } from './core/services/project/project.service';
+import { ServiceInterceptor } from './core/interceptors/service.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,9 +38,16 @@ import { MasmasPipe } from './shared/pipes/masmas.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService, ClientService, ProjectService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ServiceInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
