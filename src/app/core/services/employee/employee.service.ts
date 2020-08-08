@@ -39,7 +39,7 @@ url: string = 'https://proyecto-javascript-8ecde.web.app/api/employees';
 
 
   count(): Observable<any>  {
-    return this.http.get<any>('https://proyecto-javascript-8ecde.web.app/api/count/clients', this.httpOptions)
+    return this.http.get<any>('https://proyecto-javascript-8ecde.web.app/api/count/employees', this.httpOptions)
       .pipe(
         retry(1)
       );

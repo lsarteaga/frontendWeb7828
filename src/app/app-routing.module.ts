@@ -13,18 +13,23 @@ import {ProjectListComponent} from './components/project/project-list/project-li
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: 'employee/:id', component: EmployeeCardComponent},
-  {path: 'employee/form', component: EmployeeFormComponent},
+  {path: 'employee/card/:id', component: EmployeeCardComponent},
   {path: 'employee/form/:id', component: EmployeeFormComponent},
-  {path: 'list/employee', component: EmployeeListComponent},
-  {path: 'client/:id', component: ClientCardComponent},
+  {path: 'employee/form', component: EmployeeFormComponent},
+  {path: 'employee/list', component: EmployeeListComponent},
+
+
+  {path: 'client/list', component: ClientListComponent},
   {path: 'client/form', component: ClientFormComponent},
   {path: 'client/form/:id', component: ClientFormComponent},
-  {path: 'client/list', component: ClientListComponent},
-  {path: 'project/:id', component: ProjectCardComponent},
+  {path: 'client/card/:id', component: ClientCardComponent},
+
+  {path: 'project/card/:id', component: ProjectCardComponent},
   {path: 'project/form', component: ProjectFormComponent},
   {path: 'project/form/:id', component: ProjectFormComponent},
-  {path: 'project/list', component: ProjectListComponent}
+
+  {path: 'project/list', component: ProjectListComponent},
+  
 ];
 
 @NgModule({

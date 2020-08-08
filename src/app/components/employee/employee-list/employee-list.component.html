@@ -1,6 +1,13 @@
 
 <div class="container">
-    <strong>{{ title|titlecase }}</strong><br>
+    <h2><strong>{{ title|titlecase }}</strong></h2><br><br>
+    <button class="btn btn-success btn-3" [routerLink]="['/employee/form/']"><fa-icon ></fa-icon>&nbsp;Agregar</button>&nbsp;&nbsp;
+          Elementos por página:&nbsp;
+                          <select [value]="limit" (change)="changeLimit($event)">
+                              <option>5</option>
+                              <option>10</option>
+                              <option>20</option>
+                          </select>   
     <table  class="table">
         <thead>
             <td>No. </td>
@@ -22,10 +29,25 @@
 
             <td>
                 
-                <button mat-button class="btn btn-sm btn-info" [routerLink]="['/employee', item.idemployee]"><fa-icon [icon]='faEye'></fa-icon>&nbsp;</button>
+                <button mat-button class="btn btn-sm btn-info" [routerLink]="['/employee/card', item.idemployee]"><fa-icon [icon]='faEye'></fa-icon>&nbsp;</button>
                 <button mat-button class="btn btn-sm btn-warning" [routerLink]="['/employee/form', item.idemployee]"><fa-icon [icon]='faPencilAlt'></fa-icon>&nbsp;</button>
                 <button mat-button class="btn btn-sm btn-danger" (click)="delete(item)"><fa-icon [icon]='faTrash'></fa-icon>&nbsp;</button>
             </td>
         </tr>
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <button class="page-link" (click)="loadPage(1)" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </button>
+          </li>
+          <li class="page-item" *ngFor="let pg of pages"><button class="page-link" (click)="loadPage(pg)">{{pg}}</button></li>              
+          <li class="page-item">
+            <button class="page-link" (click)="loadPage(numberPages)" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
 </div>
