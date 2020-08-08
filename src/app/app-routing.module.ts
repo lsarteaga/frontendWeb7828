@@ -17,14 +17,14 @@ const routes: Routes = [
   {path: 'employee/form', component: EmployeeFormComponent},
   {path: 'employee/form/:id', component: EmployeeFormComponent},
   {path: 'list/employee', component: EmployeeListComponent},
-  {path: 'client/:id', component: ClientCardComponent},
+  {path: 'client/list', component: ClientListComponent},
   {path: 'client/form', component: ClientFormComponent},
   {path: 'client/form/:id', component: ClientFormComponent},
-  {path: 'client/list', component: ClientListComponent},
-  {path: 'project/:id', component: ProjectCardComponent},
+  {path: 'client/card/:id', component: ClientCardComponent},
+  {path: 'project/list', component: ProjectListComponent},
   {path: 'project/form', component: ProjectFormComponent},
-  {path: 'project/form/:id', component: ProjectFormComponent},
-  {path: 'project/list', component: ProjectListComponent}
+  {path: 'project/card/:id', component: ProjectCardComponent},
+  {path: 'project/form/:id', component: ProjectFormComponent}
 ];
 
 @NgModule({
