@@ -14,7 +14,7 @@ export class ProjectListComponent implements OnInit {
   faPlus = faPlus;
   faPencilAlt = faPencilAlt;
   projects : Project[];
-  title:string;
+  title = "Listado de proyectos";
   numberPages : number;
   numberDocs : number;  
   limit : number = 10;   

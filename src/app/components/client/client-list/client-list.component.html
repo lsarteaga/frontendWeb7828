@@ -1,5 +1,12 @@
 <div class="container">
-  <strong>{{ title|titlecase }}</strong><br>
+  <h2><strong>{{ title|titlecase }}</strong></h2><br><br>
+  <button class="btn btn-success btn-3" [routerLink]="['/client/form/']"><fa-icon ></fa-icon>&nbsp;Agregar</button>&nbsp;&nbsp;
+          Elementos por página:&nbsp;
+                          <select [value]="limit" (change)="changeLimit($event)">
+                              <option>5</option>
+                              <option>10</option>
+                              <option>20</option>
+                          </select>  
   <table  class="table">
     <thead>
     <td>No. </td>
@@ -24,4 +31,19 @@
       </td>
     </tr>
   </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <button class="page-link" (click)="loadPage(1)" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li class="page-item" *ngFor="let pg of pages"><button class="page-link" (click)="loadPage(pg)">{{pg}}</button></li>              
+      <li class="page-item">
+        <button class="page-link" (click)="loadPage(numberPages)" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 </div>
