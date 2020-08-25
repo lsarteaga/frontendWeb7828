@@ -6,7 +6,8 @@
     <div class="col">
       <div class="card">
         <div class="card-body card-header">
-          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon><strong> Nombre:</strong>
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong> Nombre:</strong>
           <div class="media-body">
             <h5>{{ client.name }}</h5>
           </div>
@@ -16,7 +17,19 @@
     <div class="col">
       <div class="card">
         <div class="card-body card-header">
-          <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon><strong> Cédula:</strong>
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong> Apellido:</strong>
+          <div class="media-body">
+            <h5>{{ client.surname }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon>
+          <strong> Cédula:</strong>
           <div class="media-body">
             <h5>{{ client.cardId }}</h5>
           </div>
@@ -29,7 +42,8 @@
     <div class="col">
       <div class="card">
         <div class="card-body card-header">
-          <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon><strong> Teléfono:</strong>
+          <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon>
+          <strong> Teléfono:</strong>
           <div class="media-body">
             <h5>{{ client.phone }}</h5>
           </div>
@@ -39,7 +53,8 @@
     <div class="col">
       <div class="card">
         <div class="card-body card-header">
-          <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon><strong> Dirección:</strong>
+          <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon>
+          <strong> Dirección:</strong>
           <div class="media-body">
             <h5>{{ client.direction }}</h5>
           </div>

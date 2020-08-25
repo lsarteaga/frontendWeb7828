@@ -1,67 +1,84 @@
 <div class="container">
-    <h2><strong>Registro de {{ employee.name }}</strong></h2>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body card-header">
-                    <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon><strong>Nombre:</strong>
-                    <div class="media-body">
-                        <h5>{{ employee.name }}</h5>
-                    </div>
-                </div>
-            </div>
+  <h2><strong>Registro de {{ employee.name }}</strong></h2>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong>Nombre:</strong>
+          <div class="media-body">
+            <h5>{{ employee.name }}</h5>
+          </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body card-header">
-                    <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon><strong>Cedula:</strong>
-                    <div class="media-body">
-                        <h5>{{ employee.cardId }}</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <br>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body card-header">
-                    <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon><strong>Teléfono:</strong>
-                    <div class="media-body">
-                        <h5>{{ employee.phone }}</h5>
-                    </div>
-                </div>
-            </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong>Apellido:</strong>
+          <div class="media-body">
+            <h5>{{ employee.surname }}</h5>
+          </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body card-header">
-                    <fa-icon [icon]='faUniversity'>&nbsp;&nbsp;</fa-icon><strong>Profesión:</strong>
-                    <div class="media-body">
-                        <h5>{{ employee.profession }}</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <br>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body card-header">
-                    <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon><strong>Dirección:</strong>
-                    <div class="media-body">
-                        <h5>{{ employee.direction }}</h5>
-                    </div>
-                </div>
-            </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon>
+          <strong>Cedula:</strong>
+          <div class="media-body">
+            <h5>{{ employee.cardId }}</h5>
+          </div>
         </div>
-    </div><br>
-    <div class="btn-group">
-        <button type="reset" [routerLink]="['/employee/list']" class="btn btn-primary">
-            <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Resgresar
-        </button>
+      </div>
     </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon>
+          <strong>Teléfono:</strong>
+          <div class="media-body">
+            <h5>{{ employee.phone }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUniversity'>&nbsp;&nbsp;</fa-icon>
+          <strong>Profesión:</strong>
+          <div class="media-body">
+            <h5>{{ employee.profession }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon>
+          <strong>Dirección:</strong>
+          <div class="media-body">
+            <h5>{{ employee.direction }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="btn-group">
+    <button type="reset" [routerLink]="['/employee/list']" class="btn btn-primary">
+      <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Resgresar
+    </button>
+  </div>
 
 </div>

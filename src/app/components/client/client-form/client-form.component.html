@@ -7,9 +7,21 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><fa-icon [icon]='faQuoteLeft'></fa-icon></span>
           </div>
-          <input formControlName="name" type="text" class="form-control form-control-user" [(ngModel)]="client.name" [ngClass]="{'is-invalid': submitted && f.name.errors}" placeholder="Nombre" />
+          <input formControlName="name" type="text" class="form-control form-control-user" [(ngModel)]="client.name"
+                 [ngClass]="{'is-invalid': submitted && f.name.errors}" placeholder="Nombre"/>
           <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
             <div *ngIf="f.name.errors.required">El nombre es requerido</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faQuoteLeft'></fa-icon></span>
+          </div>
+          <input formControlName="surname" type="text" class="form-control form-control-user"
+                 [(ngModel)]="client.surname" [ngClass]="{'is-invalid': submitted && f.surname.errors}"
+                 placeholder="Nombre"/>
+          <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+            <div *ngIf="f.surname.errors.required">El apellido es requerido</div>
           </div>
         </div>
 
@@ -17,7 +29,8 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><fa-icon [icon]='faIdCard'></fa-icon></span>
           </div>
-          <input formControlName="cardId" type="text" class="form-control form-control-user"  [(ngModel)]="client.cardId" [ngClass]="{'is-invalid': submitted && f.cardId.errors}" placeholder="Cédula" />
+          <input formControlName="cardId" type="text" class="form-control form-control-user" [(ngModel)]="client.cardId"
+                 [ngClass]="{'is-invalid': submitted && f.cardId.errors}" placeholder="Cédula"/>
           <div *ngIf="submitted && f.cardId.errors" class="invalid-feedback">
             <div *ngIf="f.cardId.errors.required">Número de cédula requerido</div>
           </div>
@@ -27,7 +40,8 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><fa-icon [icon]='faPhone'></fa-icon></span>
           </div>
-          <input formControlName="phone" type="text" class="form-control form-control-user"  [(ngModel)]="client.phone" [ngClass]="{'is-invalid': submitted && f.phone.errors}" placeholder="Phone" />
+          <input formControlName="phone" type="text" class="form-control form-control-user" [(ngModel)]="client.phone"
+                 [ngClass]="{'is-invalid': submitted && f.phone.errors}" placeholder="Phone"/>
           <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
             <div *ngIf="f.phone.errors.required">Número de teléfono requerido</div>
           </div>
@@ -37,7 +51,9 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><fa-icon [icon]='faHome'></fa-icon></span>
           </div>
-          <input formControlName="direction" type="text" class="form-control form-control-user"  [(ngModel)]="client.direction" [ngClass]="{'is-invalid': submitted && f.direction.errors}" placeholder="Dirección" />
+          <input formControlName="direction" type="text" class="form-control form-control-user"
+                 [(ngModel)]="client.direction" [ngClass]="{'is-invalid': submitted && f.direction.errors}"
+                 placeholder="Dirección"/>
           <div *ngIf="submitted && f.direction.errors" class="invalid-feedback">
             <div *ngIf="f.direction.errors.required">La dirección es requerida</div>
           </div>

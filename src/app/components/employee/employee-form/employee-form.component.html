@@ -1,72 +1,90 @@
 <div class="container">
 
-    <div>
-        <h2>{{ title }}</h2>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="user">
-            <div class="card-body">        
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><fa-icon [icon]='faQuoteLeft'></fa-icon></span>
-                    </div>
-                    <input formControlName="name" type="text" class="form-control form-control-user" [(ngModel)]="employee.name" [ngClass]="{'is-invalid': submitted && f.name.errors}" placeholder="Nombre" />
-                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                        <div *ngIf="f.name.errors.required">El nombre es requerido</div>
-                    </div>
-                </div>        
-                
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><fa-icon [icon]='faIdCard'></fa-icon></span>
-                    </div>
-                    <input formControlName="cardId" type="text" class="form-control form-control-user"[(ngModel)]="employee.cardId" [ngClass]="{'is-invalid': submitted && f.cardId.errors}" placeholder="Número de cédula" />
-                    <div *ngIf="submitted && f.cardId.errors" class="invalid-feedback">
-                        <div *ngIf="f.cardId.errors.required">Numero de cédula requerido</div>
-                    </div>
-                </div>             
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><fa-icon [icon]='faUniversity'></fa-icon></span>
-                    </div>
-                    <input formControlName="profession" type="text" class="form-control form-control-user" [(ngModel)]="employee.profession" [ngClass]="{'is-invalid': submitted && f.profession.errors}" placeholder="Profesión" />
-                    <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
-                        <div *ngIf="f.profession.errors.required">Profesión requerida</div>
-                    </div>
-                </div>          
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><fa-icon [icon]='faDirections'></fa-icon></span>
-                    </div>
-                    <input formControlName="direction" type="text" class="form-control form-control-user" [(ngModel)]="employee.direction" [ngClass]="{'is-invalid': submitted && f.direction.errors}" placeholder="Dirección" />
-                    <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
-                        <div *ngIf="f.direction.errors.required">Direccion requerida</div>
-                    </div>
-                </div>       
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><fa-icon [icon]='faPhone'></fa-icon></span>
-                    </div>
-                    <input formControlName="phone" type="text" class="form-control form-control-user" [(ngModel)]="employee.phone" [ngClass]="{'is-invalid': submitted && f.phone.errors}" placeholder="Teléfono" />
-                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                        <div *ngIf="f.phone.errors.required">Direccion requerida</div>
-                    </div>
-                </div>        
-        
-                <div class="btn-group">
-                    <button type="submit" class="btn btn-success">
-                        <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar
-                    </button>
-                    <button type="reset" (click)="onReset()" class="btn btn-danger">
-                        <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar
-                    </button>
-                    <button type="reset" [routerLink]="['/employee/list']" class="btn btn-primary">
-                        <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Resgresar
-                    </button>
-                </div>
-                </div>        
-        </form>
-        
-    
-    </div>
+  <div>
+    <h2>{{ title }}</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="user">
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faQuoteLeft'></fa-icon></span>
+          </div>
+          <input formControlName="name" type="text" class="form-control form-control-user" [(ngModel)]="employee.name"
+                 [ngClass]="{'is-invalid': submitted && f.name.errors}" placeholder="Nombre"/>
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">El nombre es requerido</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faQuoteLeft'></fa-icon></span>
+          </div>
+          <input formControlName="surname" type="text" class="form-control form-control-user"
+                 [(ngModel)]="employee.surname" [ngClass]="{'is-invalid': submitted && f.name.errors}"
+                 placeholder="Apellido"/>
+          <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+            <div *ngIf="f.surname.errors.required">El apellido es requerido</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faIdCard'></fa-icon></span>
+          </div>
+          <input formControlName="cardId" type="text" class="form-control form-control-user"
+                 [(ngModel)]="employee.cardId" [ngClass]="{'is-invalid': submitted && f.cardId.errors}"
+                 placeholder="Número de cédula"/>
+          <div *ngIf="submitted && f.cardId.errors" class="invalid-feedback">
+            <div *ngIf="f.cardId.errors.required">Numero de cédula requerido</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faUniversity'></fa-icon></span>
+          </div>
+          <input formControlName="profession" type="text" class="form-control form-control-user"
+                 [(ngModel)]="employee.profession" [ngClass]="{'is-invalid': submitted && f.profession.errors}"
+                 placeholder="Profesión"/>
+          <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+            <div *ngIf="f.profession.errors.required">Profesión requerida</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faDirections'></fa-icon></span>
+          </div>
+          <input formControlName="direction" type="text" class="form-control form-control-user"
+                 [(ngModel)]="employee.direction" [ngClass]="{'is-invalid': submitted && f.direction.errors}"
+                 placeholder="Dirección"/>
+          <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+            <div *ngIf="f.direction.errors.required">Direccion requerida</div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]='faPhone'></fa-icon></span>
+          </div>
+          <input formControlName="phone" type="text" class="form-control form-control-user" [(ngModel)]="employee.phone"
+                 [ngClass]="{'is-invalid': submitted && f.phone.errors}" placeholder="Teléfono"/>
+          <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Direccion requerida</div>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn btn-success">
+            <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar
+          </button>
+          <button type="reset" (click)="onReset()" class="btn btn-danger">
+            <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar
+          </button>
+          <button type="reset" [routerLink]="['/employee/list']" class="btn btn-primary">
+            <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Resgresar
+          </button>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
 
 
 </div>

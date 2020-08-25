@@ -1,73 +1,76 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { Employee} from '../../../shared/models/employee/employee';
-import { EmployeeService } from '../../../core/services/employee/employee.service'
-import { faEye, faPlus, faPencilAlt,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Employee } from '../../../shared/models/employee/employee';
+import { EmployeeService } from '../../../core/services/employee/employee.service';
+import {
+  faEye,
+  faPlus,
+  faPencilAlt,
+  faTrash,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  styleUrls: ['./employee-list.component.css'],
 })
 export class EmployeeListComponent implements OnInit {
-  faTrash=faTrash;
+  faTrash = faTrash;
   faEye = faEye;
   faPlus = faPlus;
   faPencilAlt = faPencilAlt;
   employees: Employee[];
 
-  numberPages : number;
-  numberDocs : number;  
-  limit : number = 10;   
-  currentPage : number = 1;
-  pages : Array<number> = [];
+  numberPages: number;
+  numberDocs: number;
+  limit = 10;
+  currentPage = 1;
+  pages: Array<number> = [];
   last = '-';
-  title = "Listado de empleados";
-  constructor(private employeeService: EmployeeService) { }
+  title = 'Listado de empleados';
+
+  constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
     this.count();
   }
 
-
-  init() : void{
-    this.pages = [];    
-    this.currentPage = 1;    
-    this.last = '-'; 
+  init(): void {
+    this.pages = [];
+    this.currentPage = 1;
+    this.last = '-';
   }
+
   count(): void {
-    this.employeeService.count().subscribe(
-      result => {        
-        console.log(result);
-        this.numberDocs = result.numberDocs;                           
-        this.calcNumberPages();
-      }
-    );
+    this.employeeService.count().subscribe((result) => {
+      console.log(result);
+      this.numberDocs = result.numberDocs;
+      this.calcNumberPages();
+    });
   }
 
-  calcNumberPages() {   
-    this.init();    
+  calcNumberPages() {
+    this.init();
     this.numberPages = Math.floor(this.numberDocs / this.limit);
-    this.numberPages++;            
-    for (let index = 1; index <= this.numberPages; index++) {            
-      
+    this.numberPages++;
+    for (let index = 1; index <= this.numberPages; index++) {
       this.pages.push(index);
     }
-    console.warn(this.pages);    
+    console.warn(this.pages);
     this.loadPage(this.currentPage);
   }
-  changeLimit($event){
+
+  changeLimit($event) {
     this.limit = $event.target.value;
     this.calcNumberPages();
   }
 
-  loadPage(pg : number){    
-    this.currentPage = pg;    
-    this.employeeService.list(pg, this.limit).subscribe(
-      result => {
-        console.log(result);
-        this.employees = result      
-      }
-    )
+  loadPage(pg: number) {
+    this.currentPage = pg;
+    this.employeeService.list(pg, this.limit).subscribe((result) => {
+      console.log(result);
+      this.employees = result;
+    });
   }
 
   delete(employe: Employee): void {
@@ -82,14 +85,10 @@ export class EmployeeListComponent implements OnInit {
       cancelButtonText: 'Cancelar',
     }).then((option) => {
       if (option.value) {
-        this.employeeService.delete(employe.idemployee).subscribe(
-          result => {                        
-            this.loadPage(this.currentPage);
-          }
-        );
+        this.employeeService.delete(employe.idemployee).subscribe((result) => {
+          this.loadPage(this.currentPage);
+        });
       }
     });
   }
- 
-
 }
