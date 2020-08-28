@@ -9,6 +9,7 @@ import { EmployeeListComponent } from './components/employee/employee-list/emplo
 import { ProjectCardComponent } from './components/project/project-card/project-card.component';
 import { ProjectFormComponent } from './components/project/project-form/project-form.component';
 import { ProjectListComponent } from './components/project/project-list/project-list.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'project/form', component: ProjectFormComponent },
   { path: 'project/card/:id', component: ProjectCardComponent },
   { path: 'project/form/:id', component: ProjectFormComponent },
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({

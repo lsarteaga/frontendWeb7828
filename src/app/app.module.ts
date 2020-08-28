@@ -20,7 +20,10 @@ import { ClientService } from './core/services/client/client.service';
 import { ProjectService } from './core/services/project/project.service';
 import { ServiceInterceptor } from './core/interceptors/service.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeService } from './core/services/home/home.service';
 import { MaterialModule } from './modules/material/material.module';
+import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { MaterialModule } from './modules/material/material.module';
     ProjectListComponent,
     ProjectCardComponent,
     MasmasPipe,
+    NavComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,7 @@ import { MaterialModule } from './modules/material/material.module';
     EmployeeService,
     ClientService,
     ProjectService,
+    HomeService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ServiceInterceptor,
