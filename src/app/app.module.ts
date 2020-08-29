@@ -30,6 +30,8 @@ import { ContractFormComponent } from './components/contract/contract-form/contr
 import { AdvanceCardComponent } from './components/advance/advance-card/advance-card.component';
 import { AdvanceListComponent } from './components/advance/advance-list/advance-list.component';
 import { AdvanceFormComponent } from './components/advance/advance-form/advance-form.component';
+import { ContractService } from './core/services/contract/contract.service';
+import { AdvanceService } from './core/services/advance/advance.service';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { AdvanceFormComponent } from './components/advance/advance-form/advance-
     ClientService,
     ProjectService,
     HomeService,
+    AdvanceService,
+    ContractService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ServiceInterceptor,
