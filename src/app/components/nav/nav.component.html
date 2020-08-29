@@ -6,8 +6,20 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="home">Home</a>
-      <a mat-list-item href="#">Empleados</a>
-      <a mat-list-item href="#">Proyectos</a>
+      <a mat-list-item routerLink="client/list">
+        <fa-icon [icon]='faSuitcase' class="icon"></fa-icon>
+        Clientes</a>
+      <a mat-list-item routerLink="employee/list">
+        <fa-icon [icon]='faUsers' class="icon"></fa-icon>
+        Empleados</a>
+      <a mat-list-item routerLink="project/list">
+        <fa-icon [icon]='faBuilding' class="icon"></fa-icon>
+        Proyectos</a>
+
+      <a mat-list-item href="#">
+        <fa-icon [icon]='faChartBar' class="icon"></fa-icon>
+        Estadisticas
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

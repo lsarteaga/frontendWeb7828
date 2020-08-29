@@ -1,17 +1,15 @@
-import {Client} from '../client/client';
-import {Employee} from '../employee/employee';
+import { Employee } from '../employee/employee';
+import { Advance } from '../advance/advance';
+import { Contract } from '../contract/contract';
 
 export class Project {
   idproject?: string;
-  kind: string;
-  dateInit: string;
-  dateFinish: string;
-  direction: string;
-  state: string;
-  cost: number;
+  address: string;
+  status: string;
   description: string;
-  idemployee: string;
-  idclient: string;
-  client?: Client;
-  employee?: Employee;
+  projectType: string;
+  employees: Array<Employee>;
+  advances: Array<Advance>;
+  idcontract: string;
+  contract?: Contract;
 }

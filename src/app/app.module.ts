@@ -24,6 +24,12 @@ import { HomeService } from './core/services/home/home.service';
 import { MaterialModule } from './modules/material/material.module';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { ContractCardComponent } from './components/contract/contract-card/contract-card.component';
+import { ContractListComponent } from './components/contract/contract-list/contract-list.component';
+import { ContractFormComponent } from './components/contract/contract-form/contract-form.component';
+import { AdvanceCardComponent } from './components/advance/advance-card/advance-card.component';
+import { AdvanceListComponent } from './components/advance/advance-list/advance-list.component';
+import { AdvanceFormComponent } from './components/advance/advance-form/advance-form.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,12 @@ import { HomeComponent } from './components/home/home.component';
     MasmasPipe,
     NavComponent,
     HomeComponent,
+    ContractCardComponent,
+    ContractListComponent,
+    ContractFormComponent,
+    AdvanceCardComponent,
+    AdvanceListComponent,
+    AdvanceFormComponent,
   ],
   imports: [
     BrowserModule,
