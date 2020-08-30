@@ -1,6 +1,9 @@
 <div class="container">
   <h2><strong>{{ title|titlecase }}</strong></h2><br><br>
-  <button class="btn btn-success btn-3" [routerLink]="['/contract/form/']">
+ <!-- <button class="btn btn-success btn-3" (click)="onClick(idEmployee)">
+    <fa-icon></fa-icon>&nbsp;Agregar
+  </button>&nbsp;&nbsp;-->
+  <button class="btn btn-success btn-3" [routerLink]="['/contract/employee/form/', idEmployee]">
     <fa-icon></fa-icon>&nbsp;Agregar
   </button>&nbsp;&nbsp;
   Elementos por página:&nbsp;
@@ -26,7 +29,7 @@
       <td>{{ item.startDate }}</td>
       <td>{{ item.endDate }}</td>
       <td>{{ item.idemployee }}</td>
-      <td>{{ item.idclient }}</td>
+      <td>{{ item.idclient  }}</td>
 
       <td>
         <button mat-button class="btn btn-sm btn-info" [routerLink]="['/contract/card', item.idcontract]">

@@ -61,4 +61,10 @@ export class ClientService {
       )
       .pipe(retry(1));
   }
+
+  listAll(): Observable<Client[]> {
+    return this.http
+      .get<Client[]>(this.url.concat('/list/'), this.httpOptions)
+      .pipe(retry(1));
+  }
 }

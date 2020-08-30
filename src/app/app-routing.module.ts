@@ -9,6 +9,9 @@ import { EmployeeListComponent } from './components/employee/employee-list/emplo
 import { ProjectCardComponent } from './components/project/project-card/project-card.component';
 import { ProjectFormComponent } from './components/project/project-form/project-form.component';
 import { ProjectListComponent } from './components/project/project-list/project-list.component';
+import { ContractCardComponent } from './components/contract/contract-card/contract-card.component';
+import { ContractFormComponent } from './components/contract/contract-form/contract-form.component';
+import { ContractListComponent } from './components/contract/contract-list/contract-list.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
@@ -25,6 +28,13 @@ const routes: Routes = [
   { path: 'project/form', component: ProjectFormComponent },
   { path: 'project/card/:id', component: ProjectCardComponent },
   { path: 'project/form/:id', component: ProjectFormComponent },
+  { path: 'contract/list', component: ContractListComponent },
+  {
+    path: 'contract/employee/form/:idEmloyee',
+    component: ContractFormComponent,
+  },
+  { path: 'contract/card/:id', component: ContractCardComponent },
+  { path: 'contract/form/:id', component: ContractFormComponent },
   { path: 'home', component: HomeComponent },
 ];
 

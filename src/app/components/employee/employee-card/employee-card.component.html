@@ -77,8 +77,13 @@
   <br>
   <div class="btn-group">
     <button type="reset" [routerLink]="['/employee/list']" class="btn btn-primary">
-      <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Resgresar
+      <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Regresar
     </button>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-employee-contracts [idEmployee]="employee.idemployee"></app-employee-contracts>
+    </div>
   </div>
 
 </div>

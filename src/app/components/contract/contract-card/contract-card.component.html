@@ -1,1 +1,83 @@
-<p>contract-card works!</p>
+<div class="container">
+  <div>
+    <h2><strong>Código de contrato: {{ contract.idcontract }}</strong></h2>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong> Código:</strong>
+          <div class="media-body">
+            <h5>{{ contract.idcontract }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong> Costo:</strong>
+          <div class="media-body">
+            <h5>{{ contract.cost }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon>
+          <strong> Fecha de inicio:</strong>
+          <div class="media-body">
+            <h5>{{ contract.startDate }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon>
+          <strong> Fecha fin:</strong>
+          <div class="media-body">
+            <h5>{{ contract.endDate }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon>
+          <strong> Código de empleado:</strong>
+          <div class="media-body">
+            <h5>{{ contract.idemployee }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faDirections'>&nbsp;&nbsp;</fa-icon>
+          <strong> Código de cliente:</strong>
+          <div class="media-body">
+            <h5>{{ contract.idclient }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <a href="#" class="btn btn-success" routerLink="/client/list">Listado de Contratos Asociados</a>
+    </div>
+  </div>
+</div>
+

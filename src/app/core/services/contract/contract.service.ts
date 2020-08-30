@@ -12,6 +12,8 @@ export class ContractService {
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
   url = 'http://localhost:5000/api/contracts';
   root = 'http://localhost:5000/api/';
+  root2 = 'http://localhost:5000/api/employee/';
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -61,6 +63,21 @@ export class ContractService {
     return this.httpClient
       .get<Contract[]>(
         this.root.concat('page/contracts/') + page + '/' + limit,
+        this.httpOptions
+      )
+      .pipe(retry(1));
+  }
+
+  count2(id: string): Observable<any> {
+    return this.httpClient
+      .get<any>(this.root2.concat('count/contracts/') + id, this.httpOptions)
+      .pipe(retry(1));
+  }
+
+  list2(page: number, limit: number, id: string): Observable<Contract[]> {
+    return this.httpClient
+      .get<Contract[]>(
+        this.root2.concat('contracts/') + id + '/' + page + '/' + limit,
         this.httpOptions
       )
       .pipe(retry(1));

@@ -37,6 +37,7 @@ export class ClientCardComponent implements OnInit {
           this.client = result;
           this.client.idclient = params['id'];
           this.title = this.client.name;
+          console.log(result);
         });
       }
     });
