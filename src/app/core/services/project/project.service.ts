@@ -11,9 +11,9 @@ export class ProjectService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/projects';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
 
-  url = 'http://localhost:5000/api/projects';
-  root = 'http://localhost:5000/api/';
-  root2 = 'http://localhost:5000/api/contract/';
+  url = 'https://proyecto-javascript-8ecde.web.app/api/projects';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';
+  root2 = 'https://proyecto-javascript-8ecde.web.app/api/contract/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,11 +25,14 @@ export class ProjectService {
   constructor(private http: HttpClient) {}
 
   save(project: Project): Observable<any> {
+    
     const projectBody = JSON.stringify(project);
+    
     if (project.idproject === undefined) {
-      return this.http.post<Project>(this.url, projectBody, this.httpOptions);
+      console.warn(projectBody)
+      return this.http.post<any>(this.url, projectBody, this.httpOptions);
     } else {
-      return this.http.put<Project>(
+      return this.http.put(
         this.url.concat('/').concat(project.idproject),
         projectBody,
         this.httpOptions
