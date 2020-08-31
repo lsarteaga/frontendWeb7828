@@ -3,7 +3,6 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { retry } from 'rxjs/operators';
 import { Project } from '../../../shared/models/project/project';
-import { Contract } from '../../../shared/models/contract/contract';
 
 @Injectable({
   providedIn: 'root',
