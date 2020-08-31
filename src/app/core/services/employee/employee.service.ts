@@ -10,8 +10,8 @@ import { Employee } from 'src/app/shared/models/employee/employee';
 export class EmployeeService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/employees';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
-  url = 'http://localhost:5000/api/employees';
-  root = 'http://localhost:5000/api/';
+  url = 'https://proyecto-javascript-8ecde.web.app/api/employees';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

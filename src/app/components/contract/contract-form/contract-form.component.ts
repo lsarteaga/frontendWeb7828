@@ -44,10 +44,6 @@ export class ContractFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      this.contract.idemployee = this.activatedRoute.snapshot.paramMap.get(
-        'idEmployee'
-      );
-      console.log(params['idEmployee']);
 
       console.log(this.contract.idemployee);
       if (params['id']) {
@@ -58,17 +54,19 @@ export class ContractFormComponent implements OnInit {
         });
       } else {
         this.contract = new Contract();
+        this.contract.idemployee = params['idEmployee'];
         this.title = 'Nuevo registro';
       }
+      
     });
 
     this.form = this.formBuilder.group({
       cost: ['', [Validators.required]],
       startDate: ['', [Validators.required]],
       endDate: ['', [Validators.required]],
-      idemployee: ['', [Validators.required]],
       idclient: ['', [Validators.required]],
     });
+    this.listClients();
   }
 
   get f() {
@@ -76,6 +74,7 @@ export class ContractFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.warn(this.contract.idemployee)
     this.submitted = true;
     if (this.form.invalid) {
       return;

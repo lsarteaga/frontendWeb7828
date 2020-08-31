@@ -9,8 +9,8 @@
           </div>
           <input formControlName="cost" type="text" class="form-control form-control-user" [(ngModel)]="contract.cost"
                  [ngClass]="{'is-invalid': submitted && f.cost.errors}" placeholder="Costo"/>
-          <div *ngIf="submitted && f.costo.errors" class="invalid-feedback">
-            <div *ngIf="f.costo.errors.required">Costo requerido</div>
+          <div *ngIf="submitted && f.cost.errors" class="invalid-feedback">
+            <div *ngIf="f.cost.errors.required">Costo requerido</div>
           </div>
         </div>
         <div class="input-group mb-3">
@@ -41,30 +41,24 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><fa-icon [icon]='faPhone'></fa-icon></span>
           </div>
-          <input formControlName="idemployee" type="text" class="form-control form-control-user"
-                 [(ngModel)]="contract.idemployee"
-                 [ngClass]="{'is-invalid': submitted && f.idemployee.errors}" placeholder="Id empleado" [value]="contract.idemployee"/>
-          <div *ngIf="submitted && f.idemployee.errors" class="invalid-feedback">
-            <div *ngIf="f.idemployee.errors.required">codigo empleado requerido</div>
-          </div>
+            <div class="card col">
+              <p>{{ contract.idemployee }}</p>
+            </div>
+         
         </div>
 
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"><fa-icon [icon]='faHome'></fa-icon></span>
           </div>
-          <input formControlName="idclient" type="text" class="form-control form-control-user"
-                 [(ngModel)]="contract.idclient" [ngClass]="{'is-invalid': submitted && f.idclient.errors}"
-                 placeholder="codigo cliente"/>
+          <select class="col" formControlName="idclient" [(ngModel)]="contract.idclient" [ngClass]="{'is-invalid': submitted && f.idclient.errors}">
+            <option [value]="item.idclient" *ngFor="let item of clients" >{{item.surname }} {{item.name }}</option>
+          </select>
           <div *ngIf="submitted && f.idclient.errors" class="invalid-feedback">
-            <div *ngIf="f.idclient.errors.required">codigo de cliente requerido</div>
+            <div *ngIf="f.idclient.errors.required">Codigo de cliente requerido</div>
           </div>
         </div>
-        <div>
-          <select name="" id="" formControlName="idclient">
-            <option [value]="item.idclient" *ngFor="let item of clients">{{item.name}} {{item.surname}}</option>
-          </select>
-        </div>
+
         <div class="btn-group">
           <button type="submit" class="btn btn-success">
             <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar

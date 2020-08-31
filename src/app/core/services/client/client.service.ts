@@ -10,8 +10,8 @@ import { retry } from 'rxjs/operators';
 export class ClientService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/clients';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
-  url = 'http://localhost:5000/api/clients';
-  root = 'http://localhost:5000/api/';
+  url = 'https://proyecto-javascript-8ecde.web.app/api/clients';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export class ClientService {
 
   listAll(): Observable<Client[]> {
     return this.http
-      .get<Client[]>(this.url.concat('/list/'), this.httpOptions)
+      .get<Client[]>(this.root.concat('records/clients'), this.httpOptions)
       .pipe(retry(1));
   }
 }

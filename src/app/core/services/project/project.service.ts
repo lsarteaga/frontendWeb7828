@@ -11,9 +11,11 @@ import { Contract } from '../../../shared/models/contract/contract';
 export class ProjectService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/projects';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
+
   url = 'http://localhost:5000/api/projects';
   root = 'http://localhost:5000/api/';
   root2 = 'http://localhost:5000/api/contract/';
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

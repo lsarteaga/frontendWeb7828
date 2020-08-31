@@ -10,9 +10,9 @@ import { retry } from 'rxjs/operators';
 export class ContractService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/clients';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
-  url = 'http://localhost:5000/api/contracts';
-  root = 'http://localhost:5000/api/';
-  root2 = 'http://localhost:5000/api/employee/';
+  url = 'https://proyecto-javascript-8ecde.web.app/api/contracts';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';
+  root2 = 'https://proyecto-javascript-8ecde.web.app/api/employee/';
 
   httpOptions = {
     headers: new HttpHeaders({
