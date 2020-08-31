@@ -30,6 +30,10 @@ const routes: Routes = [
   { path: 'project/form/:id', component: ProjectFormComponent },
   { path: 'contract/list', component: ContractListComponent },
   {
+    path: 'project/contract/form/:idContract',
+    component: ProjectFormComponent,
+  },
+  {
     path: 'contract/employee/form/:idEmployee',
     component: ContractFormComponent,
   },

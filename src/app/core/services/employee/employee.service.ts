@@ -8,10 +8,10 @@ import { Employee } from 'src/app/shared/models/employee/employee';
   providedIn: 'root',
 })
 export class EmployeeService {
-  /*url = 'https://proyecto-javascript-8ecde.web.app/api/employees';
-  root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
   url = 'https://proyecto-javascript-8ecde.web.app/api/employees';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';
+  /*url = 'https://proyecto-javascript-8ecde.web.app/api/employees';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -59,6 +59,11 @@ export class EmployeeService {
         this.root.concat('page/employees/') + page + '/' + limit,
         this.httpOptions
       )
+      .pipe(retry(1));
+  }
+  listAll(): Observable<Employee[]> {
+    return this.http
+      .get<Employee[]>(this.root.concat('records/employees'), this.httpOptions)
       .pipe(retry(1));
   }
 }

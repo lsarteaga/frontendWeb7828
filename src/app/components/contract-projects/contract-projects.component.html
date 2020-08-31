@@ -3,7 +3,7 @@
   <!-- <button class="btn btn-success btn-3" (click)="onClick(idEmployee)">
      <fa-icon></fa-icon>&nbsp;Agregar
    </button>&nbsp;&nbsp;-->
-  <button class="btn btn-success btn-3" [routerLink]="['/contract/employee/form/', idEmployee]">
+  <button class="btn btn-success btn-3" [routerLink]="['/project/contract/form/', idContract]">
     <fa-icon></fa-icon>&nbsp;Agregar
   </button>&nbsp;&nbsp;
   Elementos por página:&nbsp;
@@ -15,27 +15,27 @@
   <table class="table">
     <thead>
     <td>No.</td>
-    <td>Costo</td>
-    <td>Fecha Inicio</td>
-    <td>Fecha Fin</td>
-    <td>Código Empleado</td>
-    <td>Código Cliente</td>
+    <td>Dirección</td>
+    <td>Estado</td>
+    <td>Descripción</td>
+    <td>Tipo</td>
+    <td>Código Contrato</td>
 
     <td></td>
     </thead>
-    <tr *ngFor="let item of contracts; let i = index">
+    <tr *ngFor="let item of projects; let i = index">
       <td>{{ i + 1 }}</td>
-      <td>{{ item.cost }}</td>
-      <td>{{ item.startDate }}</td>
-      <td>{{ item.endDate }}</td>
-      <td>{{ item.idemployee }}</td>
-      <td>{{ item.idclient  }}</td>
+      <td>{{ item.address }}</td>
+      <td>{{ item.status }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.projectType }}</td>
+      <td>{{ item.idcontract  }}</td>
 
       <td>
-        <button mat-button class="btn btn-sm btn-info" [routerLink]="['/contract/card', item.idcontract]">
+        <button mat-button class="btn btn-sm btn-info" [routerLink]="['/project/card', item.idproject]">
           <fa-icon [icon]='faEye'></fa-icon>&nbsp;
         </button>
-        <button mat-button class="btn btn-sm btn-warning" [routerLink]="['/contract/form', item.idcontract]">
+        <button mat-button class="btn btn-sm btn-warning" [routerLink]="['/project/form', item.idproject]">
           <fa-icon [icon]='faPencilAlt'></fa-icon>&nbsp;
         </button>
         <button mat-button class="btn btn-sm btn-danger" (click)="delete(item)">

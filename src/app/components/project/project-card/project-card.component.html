@@ -1,1 +1,70 @@
-<p>project-card works!</p>
+<div class="container">
+  <h2><strong>Registro Proyecto:  {{ project.idproject }}</strong></h2>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong>Dirección:</strong>
+          <div class="media-body">
+            <h5>{{ project.address }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUser'>&nbsp;&nbsp;</fa-icon>
+          <strong>Estado:</strong>
+          <div class="media-body">
+            <h5>{{ project.status }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faIdCard'>&nbsp;&nbsp;</fa-icon>
+          <strong>Descripción:</strong>
+          <div class="media-body">
+            <h5>{{ project.description }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faPhone'>&nbsp;&nbsp;</fa-icon>
+          <strong>Tipo:</strong>
+          <div class="media-body">
+            <h5>{{ project.projectType }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body card-header">
+          <fa-icon [icon]='faUniversity'>&nbsp;&nbsp;</fa-icon>
+          <strong>Código Contrato:</strong>
+          <div class="media-body">
+            <h5>{{ project.idcontract }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="btn-group">
+    <button type="reset" [routerLink]="['/project/contract/form/', project.idcontract]" class="btn btn-primary">
+      <fa-icon [icon]='faArrowLeft'></fa-icon>&nbsp;Regresar
+    </button>
+  </div>
+</div>

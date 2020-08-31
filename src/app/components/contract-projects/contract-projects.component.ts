@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   faEye,
   faPlus,
@@ -6,9 +6,9 @@ import {
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import swal from 'sweetalert2';
-import {Router} from '@angular/router';
-import {Project} from '../../shared/models/project/project';
-import {ProjectService} from '../../core/services/project/project.service';
+import { Router } from '@angular/router';
+import { Project } from '../../shared/models/project/project';
+import { ProjectService } from '../../core/services/project/project.service';
 
 @Component({
   selector: 'app-contract-projects',
@@ -29,8 +29,7 @@ export class ContractProjectsComponent implements OnInit {
   pages: Array<number> = [];
   title: string;
 
-  constructor(private router: Router, private projectService: ProjectService) {
-  }
+  constructor(private router: Router, private projectService: ProjectService) {}
 
   ngOnInit(): void {
     this.count();
@@ -89,11 +88,10 @@ export class ContractProjectsComponent implements OnInit {
       })
       .then((option) => {
         if (option.value) {
-          this.projectService
-            .delete(project.idproject)
-            .subscribe((result) => {
-              this.loadPage(this.currentPage);
-            });
+          this.projectService.delete(project.idproject).subscribe((result) => {
+            this.loadPage(this.currentPage);
+          });
         }
       });
   }
+}
