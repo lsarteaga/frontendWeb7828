@@ -10,8 +10,8 @@ import { retry } from 'rxjs/operators';
 export class ClientService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/clients';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
-  url = 'http://localhost:5000/api/clients';
-  root = 'http://localhost:5000/api/';
+  url = 'https://proyecto-javascript-8ecde.web.app/api/clients';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

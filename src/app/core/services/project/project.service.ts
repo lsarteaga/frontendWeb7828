@@ -9,8 +9,8 @@ import { Project } from '../../../shared/models/project/project';
 export class ProjectService {
   /*url = 'https://proyecto-javascript-8ecde.web.app/api/projects';
   root = 'https://proyecto-javascript-8ecde.web.app/api/';*/
-  url = 'http://localhost:5000/api/projects';
-  root = 'http://localhost:5000/api/';
+  url = 'https://proyecto-javascript-8ecde.web.app/api/projects';
+  root = 'https://proyecto-javascript-8ecde.web.app/api/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
