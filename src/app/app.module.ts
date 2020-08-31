@@ -32,6 +32,7 @@ import { AdvanceListComponent } from './components/advance/advance-list/advance-
 import { AdvanceFormComponent } from './components/advance/advance-form/advance-form.component';
 import { ContractService } from './core/services/contract/contract.service';
 import { AdvanceService } from './core/services/advance/advance.service';
+import { EmployeeContractsComponent } from './components/employee-contracts/employee-contracts.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AdvanceService } from './core/services/advance/advance.service';
     AdvanceCardComponent,
     AdvanceListComponent,
     AdvanceFormComponent,
+    EmployeeContractsComponent,
   ],
   imports: [
     BrowserModule,

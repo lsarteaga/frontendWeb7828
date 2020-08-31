@@ -12,3 +12,5 @@ export class HomeService {
     return this.httpClient.get('https://proyecto-javascript-8ecde.firebaseio.com/api/deals');
   }
 }
+
+
