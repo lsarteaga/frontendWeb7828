@@ -34,6 +34,7 @@ export class ProjectFormComponent implements OnInit {
   submitted = false;
   employees: Employee[];
   projectStatus: ['En Progeso', 'Finalizado', 'Iniciado'];
+
   constructor(
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -67,9 +68,11 @@ export class ProjectFormComponent implements OnInit {
     });
     this.listEmployees();
   }
+
   get f() {
     return this.form.controls;
   }
+
   onSubmit(): void {
     console.warn(this.project.idcontract);
     this.submitted = true;
@@ -86,6 +89,7 @@ export class ProjectFormComponent implements OnInit {
       }
     });
   }
+
   onReset() {
     this.project = new Project();
     this.form.reset();

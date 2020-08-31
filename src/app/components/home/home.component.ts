@@ -52,6 +52,7 @@ export class HomeComponent {
     this.cards = this.isHanset ? this.cardsForHandset : this.cardsForHandset;
   }
   getImage(imageName: string): string {
+    // return 'url(' + 'https://proyecto-javascript-8ecde.web.app/images/' + imageName + '.jpg' + ')';
     return 'url(' + 'http://localhost:5000/images/' + imageName + '.jpg' + ')';
   }
 }
