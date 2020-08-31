@@ -35,8 +35,8 @@ export class ProjectFormComponent implements OnInit {
   form: FormGroup;
   submitted = false;
   
-
   projectStatus= ['En Progeso', 'Finalizado', 'Iniciado'];
+
   constructor(
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -69,9 +69,11 @@ export class ProjectFormComponent implements OnInit {
     });
 
   }
+
   get f() {
     return this.form.controls;
   }
+
   onSubmit(): void {
     console.warn(this.project.idcontract);
     this.submitted = true;
@@ -89,6 +91,7 @@ export class ProjectFormComponent implements OnInit {
       }
     });
   }
+
   onReset() {
     this.project = new Project();
     this.form.reset();
