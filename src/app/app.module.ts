@@ -34,6 +34,7 @@ import { ContractService } from './core/services/contract/contract.service';
 import { AdvanceService } from './core/services/advance/advance.service';
 import { EmployeeContractsComponent } from './components/employee-contracts/employee-contracts.component';
 import { ContractProjectsComponent } from './components/contract-projects/contract-projects.component';
+import { EmploeeDetalisComponent } from './components/emploee-detalis/emploee-detalis.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ContractProjectsComponent } from './components/contract-projects/contra
     AdvanceFormComponent,
     EmployeeContractsComponent,
     ContractProjectsComponent,
+    EmploeeDetalisComponent,
   ],
   imports: [
     BrowserModule,
