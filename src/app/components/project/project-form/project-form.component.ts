@@ -8,6 +8,7 @@ import {
   faQuoteLeft,
   faSave,
   faTimes,
+  faAd
 } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../../../shared/models/project/project';
@@ -22,6 +23,7 @@ import { EmployeeService } from '../../../core/services/employee/employee.servic
 })
 export class ProjectFormComponent implements OnInit {
   faTimes = faTimes;
+  faAd=faAd;
   faSave = faSave;
   faIdCard = faIdCard;
   faPhone = faPhone;
@@ -32,8 +34,9 @@ export class ProjectFormComponent implements OnInit {
   title: string;
   form: FormGroup;
   submitted = false;
-  employees: Employee[];
-  projectStatus: ['En Progeso', 'Finalizado', 'Iniciado'];
+  
+
+  projectStatus= ['En Progeso', 'Finalizado', 'Iniciado'];
   constructor(
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -53,6 +56,7 @@ export class ProjectFormComponent implements OnInit {
         });
       } else {
         this.project = new Project();
+        this.project.employees = []
         this.project.idcontract = params['idContract'];
         this.title = 'Nuevo registro';
       }
@@ -61,11 +65,9 @@ export class ProjectFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       address: ['', [Validators.required]],
       status: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      projectType: ['', [Validators.required]],
-      idcontract: ['', [Validators.required]],
+      description: ['', [Validators.required]]
     });
-    this.listEmployees();
+
   }
   get f() {
     return this.form.controls;
@@ -74,6 +76,7 @@ export class ProjectFormComponent implements OnInit {
     console.warn(this.project.idcontract);
     this.submitted = true;
     if (this.form.invalid) {
+      console.warn("invalid form")
       return;
     }
     this.projectService.save(this.project).subscribe((result) => {
@@ -92,9 +95,9 @@ export class ProjectFormComponent implements OnInit {
     this.submitted = false;
   }
 
-  listEmployees() {
-    this.employeeService.listAll().subscribe((result) => {
-      this.employees = result;
-    });
+
+  addEmployee($event){
+    this.project.employees.push($event);
   }
+
 }

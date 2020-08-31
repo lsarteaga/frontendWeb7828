@@ -1,0 +1,31 @@
+<p>emploee-detalis works!</p>
+<table class="table">
+    <thead>
+    <td>No.</td>
+    <td>Nombre</td>
+    <td>Apellido</td>
+    <td>Teléfono</td>
+    <td>Dirección</td>
+    <td>Profesión</td>
+    <td>Cédula</td>
+
+    <td></td>
+    </thead>
+    <tr *ngFor="let item of employees; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.surname }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.direction }}</td>
+      <td>{{ item.profession }}</td>
+      <td>{{ item.cardId }}</td>
+
+      <td>
+
+        <button mat-button class="btn btn-sm btn-info" (click)="emitEmployee(item)">
+          <fa-icon [icon]='faEye'></fa-icon>&nbsp;
+        </button>
+    
+      </td>
+    </tr>
+  </table>
